@@ -18,7 +18,7 @@ export class FriendsComponent implements OnInit {
   contact: string;
 
   addFriend() {
-    this.friends.push({ name: this.nama, email: this.email, contact: this.contact });
+    this.friends.push({ name: this.nama.toUpperCase(), email: this.email, contact: this.contact });
   }
 
   constructor() { }

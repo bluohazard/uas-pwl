@@ -1,6 +1,11 @@
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
+import { AuthService } from './services/auth.service';
+import { OrderService } from './services/order.service';
+import { MockBackend } from '@angular/http/testing';
+import { fakeBackendProvider } from './helpers/fake-backend';
 
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +33,13 @@ import { FriendsComponent } from './friends/friends.component';
       { path: 'friends', component: FriendsComponent }
     ])
   ],
-  providers: [FormsModule],
+  providers: [
+    OrderService,
+    AuthService,
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions,
+    FormsModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
