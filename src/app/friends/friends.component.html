@@ -18,31 +18,45 @@
               <h3>Add a New Friend</h3>
             </div>
             <hr>
-            <form>
+            <form [formGroup]="form">
               <div class="form-group row">
                 <label for="inputNama" class="col-sm-2 col-form-label font-weight-bold">Nama</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" (input)="nama=$event.target.value"
-                    placeholder="Masukkan nama..">
+                  <input formControlName="name" type="text" id="name" class="form-control"
+                    (input)="nama=$event.target.value" placeholder="Masukkan nama..">
+                  <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+                    <div *ngIf="name.errors.required">Nama masih kosong!</div>
+                    <div *ngIf="name.errors.minlength">Jumlah huruf minimal 3!</div>
+                    <div *ngIf="name.errors.maxlength">Jumlah huruf maksimal 20!</div>
+                  </div>
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputEmail" class="col-sm-2 col-form-label font-weight-bold">Email</label>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" (input)="email=$event.target.value"
+                  <input formControlName="email" type="email" class="form-control" (input)="email=$event.target.value"
                     placeholder="Masukkan email..">
+                  <div *ngIf="emaill.touched && emaill.invalid" class="alert alert-danger">
+                    <div *ngIf="emaill.errors.required">Email masih kosong!</div>
+                    <div *ngIf="emaill.errors.email">Email invalid!</div>
+                  </div>
                 </div>
               </div>
               <div class="form-group row">
                 <label for="inputKontak" class="col-sm-2 col-form-label font-weight-bold">Nomor Kontak</label>
                 <div class="col-sm-10">
-                  <input type="number" class="form-control" (input)="contact=$event.target.value"
-                    placeholder="Masukkan kontak..">
+                  <input formControlName="contact" type="text" class="form-control"
+                    (input)="contact=$event.target.value" placeholder="Masukkan kontak..">
+                  <div *ngIf="contacts.touched && contacts.invalid" class="alert alert-danger">
+                    <div *ngIf="contacts.errors.required">Kontak masih kosong!</div>
+                    <div *ngIf="contacts.errors.pattern">Kontak invalid!</div>
+                  </div>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-sm-12">
-                  <button type="submit" class="btn btn-info btn-block" (click)="addFriend()">Add Friend</button>
+                  <button type="submit" class="btn btn-info btn-block" (click)="addFriend()"
+                    [disabled]="form.invalid">Add Friend</button>
                 </div>
               </div>
             </form>

@@ -18,22 +18,37 @@
               <h3>Contact Me</h3>
             </div>
             <hr>
-            <div class="form-group">
-              <label for="Username" class="font-weight-bold">Nama</label>
-              <input type="text" class="form-control" (input)="nama=$event.target.value" placeholder="Masukkan nama..">
-            </div>
-            <div class="form-group">
-              <label for="Password" class="font-weight-bold">Email</label>
-              <input type="email" class="form-control" (input)="email=$event.target.value"
-                placeholder="Masukkan email..">
-            </div>
-            <div class="form-group">
-              <label for="Pesan" class="font-weight-bold">Pesan</label>
-              <textarea class="form-control" (input)="pesan=$event.target.value" rows="3"
-                placeholder="Masukkan pesan.."></textarea>
-            </div>
+            <form [formGroup]="form">
+              <div class="form-group">
+                <label for="Username" class="font-weight-bold">Nama</label>
+                <input formControlName="name" type="text" class="form-control" (input)="nama=$event.target.value"
+                  placeholder="Masukkan nama..">
+                <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+                  <div *ngIf="name.errors.required">Nama masih kosong!</div>
+                  <div *ngIf="name.errors.minlength">Jumlah huruf minimal 3!</div>
+                  <div *ngIf="name.errors.maxlength">Jumlah huruf maksimal 20!</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Password" class="font-weight-bold">Email</label>
+                <input formControlName="email" type="email" class="form-control" (input)="email=$event.target.value"
+                  placeholder="Masukkan email..">
+                <div *ngIf="emaill.touched && emaill.invalid" class="alert alert-danger">
+                  <div *ngIf="emaill.errors.required">Email masih kosong!</div>
+                  <div *ngIf="emaill.errors.email">Email invalid!</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="Pesan" class="font-weight-bold">Pesan</label>
+                <textarea formControlName="pesan" class="form-control" (input)="pesan=$event.target.value" rows="3"
+                  placeholder="Masukkan pesan.."></textarea>
+                <div *ngIf="message.touched && message.invalid" class="alert alert-danger">
+                  <div *ngIf="message.errors.required">Pesan masih kosong!</div>
+                </div>
+              </div>
+            </form>
             <input type="submit" class="btn btn-info btn-block
-                " value="Submit" (click)="showHide(); addContact()">
+                " value="Submit" (click)="showHide(); addContact()" [disabled]="form.invalid">
           </div>
         </div>
       </div>

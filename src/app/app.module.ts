@@ -7,7 +7,7 @@ import { OrderService } from './services/order.service';
 import { MockBackend } from '@angular/http/testing';
 import { fakeBackendProvider } from './helpers/fake-backend';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -27,6 +27,7 @@ import { FriendsComponent } from './friends/friends.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'contactme', component: ContactMeComponent },
