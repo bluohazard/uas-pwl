@@ -8,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FriendsComponent implements OnInit {
 
   friends = [
-    { name: 'Greggy', email: 'greggygf@gmail.com', contact: '@GreggyGF' },
-    { name: 'Gianini', email: 'greggygf@gmail.com', contact: '@GreggyGF' },
-    { name: 'Firmansyah', email: 'greggygf@gmail.com', contact: '@GreggyGF' },
+    { name: 'Greggy Gianini Firmansyah', email: 'greggygf@gmail.com', contact: '@GreggyGF' },
   ];
 
   nama: string;
