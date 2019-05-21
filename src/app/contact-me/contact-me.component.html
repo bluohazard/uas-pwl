@@ -19,19 +19,21 @@
             </div>
             <hr>
             <div class="form-group">
-              <label for="Username">Nama</label>
-              <input type="text" class="form-control" [(ngModel)]="username" placeholder="Masukkan nama..">
+              <label for="Username" class="font-weight-bold">Nama</label>
+              <input type="text" class="form-control" (input)="nama=$event.target.value" placeholder="Masukkan nama..">
             </div>
             <div class="form-group">
-              <label for="Password">Email</label>
-              <input type="email" class="form-control" [(ngModel)]="email" placeholder="Masukkan email..">
+              <label for="Password" class="font-weight-bold">Email</label>
+              <input type="email" class="form-control" (input)="email=$event.target.value"
+                placeholder="Masukkan email..">
             </div>
             <div class="form-group">
-              <label for="Pesan">Pesan</label>
-              <textarea class="form-control" [(ngModel)]="pesan" rows="3" placeholder="Masukkan pesan.."></textarea>
+              <label for="Pesan" class="font-weight-bold">Pesan</label>
+              <textarea class="form-control" (input)="pesan=$event.target.value" rows="3"
+                placeholder="Masukkan pesan.."></textarea>
             </div>
             <input type="submit" class="btn btn-info btn-block
-                " value="Submit" (click)="showHide()">
+                " value="Submit" (click)="showHide(); addContact()">
           </div>
         </div>
       </div>
@@ -45,13 +47,28 @@
               <h3>Your Data</h3>
             </div>
             <div class="form-group row">
-              <label class="col-md-12 col-form-label">Username : {{ username }}</label>
+              <label class="col-md-3 col-form-label font-weight-bold">Username</label>
+              <div class="col-md-9 col-form-label">
+                <div class="row" *ngFor="let contact of contacts">
+                  {{ contact.name }}
+                </div>
+              </div>
             </div>
             <div class="form-group row">
-              <label class="col-md-12 col-form-label">Email : {{ email }} </label>
+              <label class="col-md-3 col-form-label font-weight-bold">Email</label>
+              <div class="col-md-9 col-form-label">
+                <div class="row" *ngFor="let contact of contacts">
+                  {{ contact.email }}
+                </div>
+              </div>
             </div>
             <div class="form-group row">
-              <label class="col-md-12 col-form-label">Pesan : {{ pesan }} </label>
+              <label class="col-md-3 col-form-label font-weight-bold">Pesan</label>
+              <div class="col-md-9 col-form-label">
+                <div class="row" *ngFor="let contact of contacts">
+                  {{ contact.pesan }}
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactMeComponent implements OnInit {
 
+  contacts = [
+  ];
+
+  nama: string;
+  email: string;
+  pesan: string;
+  private isVisible = false;
+
+  addContact() {
+    this.contacts.push({ name: this.nama, email: this.email, pesan: this.pesan });
+  }
+
   constructor() { }
 
-  private isVisible = false;
   ngOnInit() {
   }
 
