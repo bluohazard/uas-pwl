@@ -74,8 +74,8 @@
             </div>
             <!-- Search form -->
             <div class="form-inline justify-content-center align-items-center">
-              <input class="form-control form-control-sm mt-3 w-25" type="text" placeholder="Search"
-                aria-label="Search">
+              <input class="form-control form-control-sm mt-3 w-25" [(ngModel)]="searchText" type="text"
+                placeholder="Search" aria-label="Search">
             </div>
             <br>
             <table class="table table-striped">
@@ -88,7 +88,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let friend of friends; let i = index">
+                <tr *ngFor="let friend of friends | filterForUser : searchText; let i = index">
                   <th scope="row">{{ i+1 }}</th>
                   <td>{{ friend.name }}</td>
                   <td>{{ friend.email }}</td>

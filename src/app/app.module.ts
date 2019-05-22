@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { FriendsComponent } from './friends/friends.component';
+import { MainPipe } from './helpers/main-pipe.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FriendsComponent } from './friends/friends.component';
   ],
   imports: [
     BrowserModule,
+    MainPipe,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
