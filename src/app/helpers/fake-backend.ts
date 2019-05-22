@@ -6,7 +6,7 @@ export function fakeBackendFactory(
   options: BaseRequestOptions) {
 
   // tslint:disable-next-line:max-line-length
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1vc2ggSGFtZWRhbmkiLCJhZG1pbiI6dHJ1ZX0.1dm4jAzSnmfPFNKXAz36Iq6I1upjQ3jW1kTfv5cx2XA';
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkdyZWdneSBHaWFuaW5pIEZpcm1hbnN5YWgiLCJhZG1pbiI6dHJ1ZX0.PxvOCuuO4Zfh2a_ghWvUy6nFdi3tKm2VdVjtuav4yl8';
 
   backend.connections.subscribe((connection: MockConnection) => {
     // We are using the setTimeout() function to simulate an
