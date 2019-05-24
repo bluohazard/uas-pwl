@@ -23,6 +23,6 @@ ng serve --o
 ## Login
 
 ```
-username : greggygf
-password : interisti
+username : bluohazard
+password : forzainter
 ```
