@@ -19,7 +19,7 @@ export function fakeBackendFactory(
         connection.request.method === RequestMethod.Post) {
         const body = JSON.parse(connection.request.getBody());
 
-        if (body.username === 'greggygf' && body.password === 'interisti') {
+        if (body.username === 'bluohazard' && body.password === 'forzainter') {
           connection.mockRespond(new Response(
             new ResponseOptions({
               status: 200,

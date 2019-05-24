@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class FriendsComponent implements OnInit {
 
   friends = [
-    { name: 'GREGGY GIANINI FIRMANSYAH', email: 'greggygf@gmail.com', contact: '@GreggyGF' },
+    { name: 'BLHZRD', email: 'xxx@xxx.xxx', contact: 'xxx' },
   ];
 
   nama: string;

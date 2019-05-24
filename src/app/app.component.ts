@@ -11,7 +11,7 @@ export class AppComponent {
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {
-    this.setTitle('UAS PWL - GreggyGF');
+    this.setTitle('UAS PWL - BLHZRD');
   }
 
   public setTitle(newTitle: string) {
