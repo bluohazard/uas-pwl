@@ -26,3 +26,4 @@ ng serve --o
 username : bluohazard
 password : forzainter
 ```
+** username dan password bisa diganti di **src/app/helpers/fake-backend.ts** pada **baris 22**
